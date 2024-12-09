@@ -1,0 +1,24 @@
+services:
+  web-app:
+    build: 
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./in100gram:/in100gram
+    environment:
+      - DB_HOST=database
+      - DB_NAME=in100gram
+      - DB_USER=in100gram_user
+      - DB_PASSWORD=password
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+  
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_DB=in100gram
+      - POSTGRES_USER=in100gram_user
+      - POSTGRES_PASSWORD=password
+
