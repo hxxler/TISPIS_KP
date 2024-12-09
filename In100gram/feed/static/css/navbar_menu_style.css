@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Outfit;
+    src: url('../fonts/Outfit-Thin.ttf');
+}
+.navbar-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 55px;
+    align-items: center;
+    background: linear-gradient(to top left, #ebd0c5, rgba(201, 168, 248, 0.789));
+    text-decoration: none;
+    list-style-type: none;
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
+
+.navbar-menu li {
+    margin-right: 40px;
+}
+
+.navbar-menu li img {
+    transition: all .13s ease-in-out;
+    width: 40px;
+    display: flex;
+}
+
+.navbar-menu li img:hover {
+    width: 45px;
+}
+
+.navbar-menu a {
+    font-size: 25px;
+    font-family: Outfit;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+    transition: all .13s ease-in-out;
+    height: 30px;
+    width: 50px;
+}
+
+.navbar-menu a:hover {
+    padding: auto;
+    color: rgb(102, 40, 189);
+    font-size: 28px;
+    align-items: center;
+
+}
+
+@media only screen and (max-width: 540px) {
+    .navbar-menu {
+        height: 72px;
+    }
+}

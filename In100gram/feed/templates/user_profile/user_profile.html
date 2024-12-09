@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/user_profile_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/navbar_menu_style.css' %}">
+    <link rel="icon" href="{%  static 'img/logo-without-bg.png' %}">
+</head>
+<body>
+    {% include 'navbar_menu.html' %}
+
+    <div class="information_block">
+
+        <div class="profile_photo_container">
+            <img src="{% if user_profile.profile_image %} /media/{{ user_profile.profile_image }} {% else %} {% static 'img/logo.jpg' %} {% endif %}" class="profile_photo">
+        </div>
+
+        <div class="profile_info_container">
+            <div class="username_container">
+                <div class="username">
+                    <a>{{ user_profile.user.username }}</a>
+                </div>
+
+                <div class="buttons_container">
+                    {% if username == user_profile.user.username %}
+                        <a href="{% url 'feed:profile_settings' %}" class="edit-profile-btn">Редактировать профиль</a>
+                    {% else %}
+                        <a href="">Подписаться</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="statistic_container">
+                <a>{{ user_profile.posts_count }} публикации</a>
+                <a href="#">{{ user_profile.followers_count }} подписчика</a>
+                <a href="#">{{ user_profile.followings_count }} подписки</a>
+            </div>
+            <div class="information_container">
+                <a class="name">{{ user_profile.first_name }} {{ user_profile.second_name }}</a>
+                <a class="description">{{ user_profile.description}} </a>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="posts">
+        {% if user_profile.posts_count == 0 %}
+            <div class="no-posts">
+                <div class="no-posts-image">
+                    <img src="">
+                </div>
+                No posts
+            </div>
+        {% else %}
+            {% for post in user_profile.user.posts.all %}
+                <div class="post">
+                    <a href="{% url 'feed:post' post_id=post.id %}"><img src="/media/{{ post.content }}"></a>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+</body>
+</html>

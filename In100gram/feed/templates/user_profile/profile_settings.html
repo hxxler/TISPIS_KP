@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile settings</title>
+
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/navbar_menu_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/profile_settings_style.css' %}">
+    <link rel="icon" href="{%  static 'img/logo-without-bg.png' %}">
+</head>
+<body>
+    {% include 'navbar_menu.html' %}
+    <form action="{% url 'feed:profile_settings' %}" method="POST" enctype="multipart/form-data" class="container">
+        {% csrf_token %}
+
+        {{ form.first_name }}
+        {{ form.second_name }}
+        {{ form.description }}
+        {{ form.profile_image }}
+
+        <input type="submit">
+    </form>
+</body>
+</html>

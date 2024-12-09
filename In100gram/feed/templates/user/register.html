@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/navbar_menu_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/login_style.css' %}">
+    <link rel="icon" href="{%  static 'img/logo-without-bg.png' %}">
+</head>
+<body>
+
+    <div class="login_form_container">
+        <div class="login_form">
+            <div class="app_name_container">
+                In100gram
+            </div>
+
+            <form action="" method="post" class="input_container">
+                {% csrf_token %}
+                <div class="input_field_container">
+                    <label for="{{ form.username.id_for_label }}"><i>Имя пользователя</i></label>
+                    {{ form.username }}
+                </div>
+                <div class="input_field_container">
+                    <label for="{{ form.email.id_for_label }}" style="font-weight: 900;"><i>E-mail</i></label>
+                    {{form.email}}
+                </div>
+                <div class="input_field_container">
+                    <label for="{{ form.password1.id_for_label }}"><i>Пароль</i></label>
+                    {{form.password1}}
+                </div>
+                <div class="input_field_container">
+                    <label for="{{ form.password2.id_for_label }}"><i>Пароль</i></label>
+                    {{form.password2}}
+                </div>
+                <div class="submit_btn">
+                    <input type="submit" value="Зарегистрироваться">
+                </div>
+            </form>
+
+            <div class="another_way_login_container">
+                <a href="#" class="another_way_login">Войти через GitHub</a>
+            </div>
+            <a href="#" class="forgot_pswd_button">Забыли пароль?</a>
+
+            <div class="register_btn_container">
+                Уже есть аккаунт?
+                <a href="{% url 'feed:login' %}" class="register_btn">Войти</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

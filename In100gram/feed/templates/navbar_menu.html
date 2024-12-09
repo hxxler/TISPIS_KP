@@ -1,0 +1,16 @@
+{% load static %}
+
+<ul class="navbar-menu">
+    {% if username %}
+        <li>
+            <a href="{% url 'feed:feed' %}">
+                <img src="{%  static 'img/logo.jpg' %}" alt="In100gram">
+            </a>
+        </li>
+        {% if username %}<li><a href="{% url 'feed:profile' username=username %}">Your Profile</a></li> {% endif %}
+        <li><a href="{% url 'feed:create_post' %}">Create post</a></li>
+        <li><a href="{% url 'feed:logout' %}">Log out</a></li>
+    {% else %}
+        <li><a href="{% url 'feed:login' %}">Log in</a></li>
+    {% endif %}
+</ul>

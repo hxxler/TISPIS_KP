@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In100gram</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar_menu_style.css' %}">
+    <link rel="icon" href="{% static 'img/logo.jpg' %}">
+</head>
+<body>
+
+    {% include 'navbar_menu.html' %}
+
+
+    <div class="post" id="post">
+
+        <div class="top">
+            <div class="profile_photo_container">
+                <a href="{% url 'feed:profile' username=post.user.username %}"><img src="/media/{{ post.user.user_profile.get.profile_image }}" class="profile_photo"></a>
+            </div>
+            <div class="username_container">
+                <a href="{% url 'feed:profile' username=post.user.username %}" class="username">{{ post.user.username }}</a>
+            </div>
+            {% if post.user.username == username %}
+                <img id="delete_btn" class ="delete_btn" src="{% static 'img/delete.png' %}" alt="Delete post" onclick="deletePost({{ post.id }})" >
+            {% endif %}
+        </div>
+
+        <div class="content_container">
+            <img src="/media/{{ post.content }}" alt="" class="content" ondblclick="LikeClick(this)">
+        </div>
+
+        <div class="reaction_container">
+
+            <div style="display: flex;">
+                <div class="button_container">
+                    <div class="like_btn {% if is_user_liked %} active {% else %} unactive {% endif %}"
+                         id="like_btn" onclick="LikeClick(this);" post-id="{{ post.id }}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="likes_count">
+                <a href="#">{{ post.likes_count }} отметок "Нравится"</a>
+            </div>
+
+        </div>
+
+        <div class="description_container">
+            <div class="description_profile_photo_container">
+                <a href="#"><img src="/media/{{ post.user.user_profile.get.profile_image }}" alt="" class="description_profile_photo"></a>
+            </div>
+            <div class="username_description">
+                <a href="#" class="username description">{{ post.user.username }}</a>
+                <span class="description">
+                    {{ post.description }}
+                </span>
+            </div>
+        </div>
+
+{#        JS will add comments#}
+        <div class="comments">
+
+        </div>
+
+    </div>
+
+    <form action="" class="write_comments" method="post">
+        {% csrf_token %}
+        {{ form.text }}
+        <input class="submit_btn" type="submit" value="Опубликовать">
+    </form>
+
+    <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'js/comments.js'%}"></script>
+</body>
+</html>

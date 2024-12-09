@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'TitilliumWeb-SemiBoldItalic';
+    src: url('../fonts/TitilliumWeb-SemiBoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TitilliumWeb-Regular';
+    src: url('../fonts/TitilliumWeb-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeebe5;
+}
+
+.post {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.top {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    background-color: rgb(49, 49, 197);
+    width: 100%;
+    padding-top: 7px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.profile_photo_container {
+    display: flex;
+    position: relative;
+    border-radius: 50%;
+    left: 25px;
+    width: 50px;
+}
+
+.profile_photo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.username_container {
+    margin-left: 35px;
+}
+
+.username {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: 'TitilliumWeb-SemiBoldItalic', sans-serif;
+}
+
+.content_container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #8d3ed6;
+}
+
+.content {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    top: 50%;
+    left: 50%;
+}
+
+.reaction_container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background-color: rgb(141, 62, 214);
+    flex-direction: column;
+}
+
+.button_container {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.like_btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    transition: .1s;
+    background-size: cover;
+}
+
+.like_btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.like_btn:active {
+    transform: scale(0.7);
+}
+
+.unactive {
+    background-image: url('../img/like_unactive.png');
+}
+
+.active {
+    background-image: url('../img/like_active.png');
+}
+
+.comments_btn {
+    width: 40px;
+    height: 40px;
+}
+
+.likes_count {
+    position: relative;
+    left: 15px;
+    height: 40px;
+}
+
+.likes_count a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'TitilliumWeb-Regular', sans-serif;
+}
+
+.description_container {
+    width: 100%;
+    background-color: rgb(135, 61, 143);
+    padding-bottom: 10px;
+    padding-top: 8px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.description {
+    display: block;
+    position: relative;
+    left: 15px;
+    width: 96%;
+    font-size: 17px;
+    color: white;
+    overflow: hidden;
+}
+
+.stripe {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    height: 30px;
+    background-color: #3a59b7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.animate-stripe {
+    animation: stripe-animation 1s infinite alternate;
+}
+
+@keyframes stripe-animation {
+    0% {
+        width: 200px;
+    }
+    100% {
+        width: 400px;
+    }
+}

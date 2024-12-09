@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeebe5;
+}
+
+.post {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 20px;
+    background-color: rgb(135, 61, 143);
+    margin-bottom: 20px;
+}
+
+.top {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: rgb(49, 49, 197);
+    width: 100%;
+    padding: 7px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.profile_photo_container {
+    display: flex;
+    position: relative;
+    left: 25px;
+    width: 50px;
+}
+
+.profile_photo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.username_container {
+    margin-left: 35px;
+}
+
+.username {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: 'TitilliumWeb-SemiBoldItalic', sans-serif;
+}
+
+.delete_btn {
+    width: 50px;
+    right: 10px;
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    cursor: pointer;
+}
+
+.content_container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #8d3ed6;
+}
+
+.content {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    top: 50%;
+    left: 50%;
+}
+
+.reaction_container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background-color: rgb(141, 62, 214);
+    flex-direction: column;
+}
+
+.button_container {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.like_btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    transition: .1s;
+    background-size: cover;
+}
+
+.like_btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.like_btn:active {
+    transform: scale(0.7);
+}
+
+.unactive {
+    background-image: url('../img/like_unactive.png');
+}
+
+.active {
+    background-image: url('../img/like_active.png');
+}
+
+.comments_btn {
+    width: 40px;
+    height: 40px;
+}
+
+.likes_count {
+    position: relative;
+    left: 15px;
+    height: 40px;
+}
+
+.likes_count a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'TitilliumWeb-Regular', sans-serif;
+}
+
+.description_container {
+    width: 100%;
+    background-color: rgb(135, 61, 143);
+    padding-bottom: 10px;
+    padding-top: 8px;
+    display: flex;
+    border-bottom: 1px solid rgb(81, 121, 134);
+}
+
+.description, .comment {
+    display: block;
+    position: relative;
+    left: 15px;
+    width: 96%;
+    font-size: 17px;
+    color: white;
+    overflow: hidden;
+}
+
+.description_profile_photo_container {
+    display: flex;
+    position: relative;
+    border-radius: 50%;
+    left: 15px;
+    top: 5px;
+    width: 70px;
+}
+
+.description_profile_photo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.comments {
+    position: relative;
+    top: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.comment_container {
+    width: 100%;
+    background-color: rgb(135, 61, 143);
+    padding-bottom: 10px;
+    padding-top: 8px;
+    display: flex;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.write_comments {
+    position: sticky;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 80%;
+    max-width: 600px;
+    min-height: 50px;
+    bottom: 0px;
+    background-color: #eeebe5;
+    display: flex;
+    align-items: center;
+}
+
+.text-input {
+    width: 80%;
+    height: auto;
+    min-height: 50px;
+    margin-right: 5px;
+    resize: none;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.submit_btn {
+    width: 20%;
+    height: 60px;
+    background-color: #ba7bf5;
+    border-width: 0px;
+    border-radius: 5px;
+    transition: .1s;
+}
+
+.submit_btn:hover {
+    filter: brightness(0.7);
+}
+
+.submit_btn:active {
+    filter: brightness(0.5);
+}
+
+.stripe {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    height: 30px;
+    background-color: #3a59b7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.animate-stripe {
+    animation: stripe-animation 1s infinite alternate;
+}
+
+@keyframes stripe-animation {
+    0% {
+        width: 200px;
+    }
+    100% {
+        width: 400px;
+    }
+}

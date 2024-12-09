@@ -1,0 +1,1 @@
+make func to delete post by button (should be sent delete-request with auth token why image "delete.png" is pressed)

@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    background-color: #eeebe5;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background.jpg');
+    background-size: 100% 100%;
+}
+
+.login_form_container {
+    width: 100%;
+    height: calc(100% - 15px);
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+}
+@media only screen and (max-width: 540px) { 
+    .login_form_container {
+        height: calc(100% - 72px);
+    }
+}
+.login_form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    justify-content: center;
+    background-color: rgba(239, 233, 224, 0.415);
+    backdrop-filter: blur(6px);
+    transition: .2s;
+    border-radius: 10px;
+    border-top: 2px solid rgb(180, 178, 178);
+    border-bottom: 2px solid rgb(180, 178, 178);
+    border-left: 2px solid rgb(180, 178, 178);
+    border-right: 2px solid rgb(180, 178, 178);
+}
+
+.login_form * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 420px) {
+    .login_form {
+        max-width: 100%;
+        width: 340px;
+    }
+}
+
+@font-face {
+    font-family: TitilliumWeb-ExtraLight;
+    src: url('../fonts/TitilliumWeb-ExtraLight.ttf') format('truetype');
+}
+
+.app_name_container {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: TitilliumWeb-ExtraLight;
+    user-select: none;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_field_container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+@font-face {
+    font-family: TitilliumWeb;
+    src: url('../fonts/TitilliumWeb-Regular.ttf');
+}
+
+.input_field_container label i {
+    margin-bottom: 5px;
+    font-family: TitilliumWeb-ExtraLight;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.input_field_container input {
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    outline: 20px solid transparent;
+    background-image:
+        linear-gradient(to bottom, #6e4848 1px, transparent 1px),
+        linear-gradient(to bottom, #6e4848 1px, transparent 1px),
+        linear-gradient(to right, #6e4848 1px, transparent 1px, transparent calc(100% - 1px), #cacaca calc(100% - 1px)),
+        linear-gradient(to top, #6e4848 1px, transparent 1px);
+    background-position: -100% 0%, 200% 0%, 0% 100%, 0% 100%;
+    background-size: 50% 100%, 50% 100%, 100% 1px, 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .4s ease-out .4s, background-position .4s ease-in;
+
+}
+
+.input_field_container input * {
+    transition: .5s;
+}
+
+.input_field_container input::placeholder {
+    color: rgb(75, 75, 95);
+}
+
+.input_field_container input:hover {
+    border-color: rgb(22, 67, 3);
+}
+
+.input_field_container input:focus {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 0% 100%;
+    background-size: 51% 100%, 51% 100%, 100% 100%, 100% 100%;
+    transition: background-size .4s ease-in, background-position .6s ease-out .4s;
+}
+
+.submit_btn {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    height: 35px;
+}
+
+.submit_btn input {
+    width: 100%;
+    background-color: rgb(0, 172, 252);
+    border-width: 0px solid;
+    border-top: 0px solid;
+    border-left: 0px solid;
+    border-right: 0px solid;
+    border-bottom: 0px solid;
+    border-radius: 8px;
+    color: rgb(235, 235, 235);
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Outfit;
+    cursor: pointer;
+}
+
+.submit_btn input:hover {
+    background-color: rgb(0, 147, 252);
+}
+
+.another_way_login_container {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.another_way_login {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+.forgot_pswd_button {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.register_btn_container {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+
+.register_btn {
+    text-decoration: none;
+}
